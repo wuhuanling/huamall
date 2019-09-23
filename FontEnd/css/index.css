@@ -1,0 +1,41 @@
+body {
+	color: red;
+}
+
+.menu ul {
+	background-color: #fff;
+	margin: 14px 0 14px 16px;
+	/* 盒模型 */
+	box-shadow: 2px 2px 6px #ddd;
+	border-radius: 10px;
+	color: #A6A6A6;
+	font-size: 16px;
+	font-weight: 400;
+	font-family: "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei", "Hiragino Sans GB", "Heiti SC", "WenQuanYi Micro Hei", sans-serif;
+}
+
+.p1 ul {
+	width: 204px;
+	height: 80px;
+}
+
+.p1 ul li a {
+	width: 204px;
+	height: 80px;
+}
+
+.p1 ul li a img {
+	width: 56px;
+	height: 56px;
+	margin: 12px 8px 0px 6px;
+	float: left;
+}
+
+.p1 ul li a span {
+	float: left;
+	width: 120px;
+	height: 19px;
+	color: #777;
+	font-size: 13px;
+	margin-top: 10px;
+}

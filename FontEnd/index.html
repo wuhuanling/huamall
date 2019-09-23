@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>华为菜单导航</title>
+
+		<script src="js/jquery-1.3.1.min.js"></script>
+
+
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			body {
+				margin: 0;
+				padding: 0;
+				text-decoration: none;
+				font-size: 10px;
+				background-color: cyan;
+			}
+
+			li {
+				list-style: none;
+			}
+
+			.menu ul {
+				width: 200px;
+				height: 440px;
+				background-color: #DDDDDD;
+				position: relative;
+			}
+
+			.menu ul li {
+				height: 74px;
+				padding-left: 8px;
+				text-align: left;
+				line-height: 30px;
+				font-size: 13px;
+				z-index: 2;
+				background-color: #F6F6F6;
+			}
+
+			.menu ul li a {
+				text-decoration: none;
+				margin-left: 16px;
+				font-size: 16px;
+			}
+
+			.menu ul li a:hover {
+				color: red;
+				text-decoration: underline;
+				cursor: pointer;
+				text-decoration: none;
+			}
+
+			.menu ul li:hover {
+				border: 0px solid #DDDDDD;
+				border-right: 0;
+				background-image: none;
+				background-color: white;
+			}
+
+			.menu ul li:hover div {
+				display: block;
+			}
+
+			.menu ul li .p1 {
+				position: absolute;
+				left: 200px;
+				top: 0;
+				width: 662px;
+				height: 444px;
+				border: 0px solid #DDD;
+				background-color: #FFF;
+				z-index: 3;
+				display: none;
+			}
+
+			.menu ul li .f2 {
+				font-size: 14px;
+				color: #A6A6A6;
+			}
+		</style>
+		<link rel="stylesheet" href="css/index.css">
+	</head>
+	<body>
+		<div class="menu">
+
+			<ul>
+
+				<li> <a herf="#">手机</a>
+					<br><a href="#" class="f2">荣耀</a>
+					<a href="#" class="f2">HUAWEI P系列</a>
+
+					<div class="p1">
+						<ul>
+							<li>
+								<a href="#">
+									<img src="#" />
+									<span>荣耀</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="#" />
+									<span>荣耀</span>
+								</a>
+							</li>
+						</ul>
+
+
+					</div>
+				</li>
+
+
+				<li> <a herf="#">笔记本 & 平板</a> <span></span>
+					<br><a href="#" class="f2">平板电脑</a>
+					<a href="#" class="f2">笔记本电脑</a>
+					<div class="p1">
+						<div class="subleft">
+							<dl>
+								<dt>二级标题222</dt>
+								<dd> <a href="#">三级标题</a> <a href="#">三级标题</a> <a href="#">三级标题</a> <a href="#">三级标题</a> <a href="#">三级标题</a>
+									<a href="#">三级标题</a> </dd>
+							</dl>
+							<dl>
+								<dt>二级标题</dt>
+								<dd> <a href="#">三级标题</a> <a href="#">三级标题</a> <a href="#">三级标题</a> <a href="#">三级标题</a> </dd>
+							</dl>
+							<dl>
+								<dt>二级标题</dt>
+								<dd> <a href="#">三级标题</a> <a href="#">三级标题</a> <a href="#">三级标题</a> <a href="#">三级标题</a> <a href="#">三级标题</a>
+								</dd>
+							</dl>
+							<dl>
+								<dt>二级标题</dt>
+								<dd> <a href="#">三级标题</a> <a href="#">三级标题</a> <a href="#">三级标题2</a> </dd>
+							</dl>
+						</div>
+
+					</div>
+				</li>
+
+
+				<li> <a herf="#">智能穿戴</a> <span></span>
+					<br><a href="#" class="f2">手环</a>
+					<a href="#" class="f2">手表</a>
+					<a href="#" class="f2">VR</a>
+					<div class="p1">
+						<div class="subleft">
+							<dl>
+								<dt>二级标题333</dt>
+								<dd> <a href="#">三级标题</a> <a href="#">三级标题</a> <a href="#">三级标题</a> <a href="#">三级标题</a> <a href="#">三级标题</a>
+									<a href="#">三级标题</a> </dd>
+							</dl>
+							<dl>
+								<dt>二级标题</dt>
+								<dd> <a href="#">三级标题</a> <a href="#">三级标题</a> <a href="#">三级标题</a> <a href="#">三级标题</a> </dd>
+							</dl>
+							<dl>
+								<dt>二级标题</dt>
+								<dd> <a href="#">三级标题</a> <a href="#">三级标题</a> <a href="#">三级标题</a> <a href="#">三级标题</a> <a href="#">三级标题</a>
+								</dd>
+							</dl>
+							<dl>
+								<dt>二级标题</dt>
+								<dd> <a href="#">三级标题</a> <a href="#">三级标题</a> <a href="#">三级标题3</a> </dd>
+							</dl>
+						</div>
+
+					</div>
+				</li>
+
+
+				<li> <a herf="#">智能家居 & 智慧屏</a> <span></span>
+					<br><a href="#" class="f2">智慧屏</a>
+					<a href="#" class="f2">路由器</a>
+					<a href="#" class="f2">照明</a>
+					<div class="p1">
+						<div class="subleft">
+							<dl>
+								<dt>二级标题444</dt>
+								<dd> <a href="#">三级标题</a> <a href="#">三级标题</a> <a href="#">三级标题</a> <a href="#">三级标题</a> <a href="#">三级标题</a>
+									<a href="#">三级标题</a> </dd>
+							</dl>
+							<dl>
+								<dt>二级标题</dt>
+								<dd> <a href="#">三级标题</a> <a href="#">三级标题</a> <a href="#">三级标题</a> <a href="#">三级标题</a> </dd>
+							</dl>
+							<dl>
+								<dt>二级标题</dt>
+								<dd> <a href="#">三级标题</a> <a href="#">三级标题</a> <a href="#">三级标题</a> <a href="#">三级标题</a> <a href="#">三级标题</a>
+								</dd>
+							</dl>
+							<dl>
+								<dt>二级标题</dt>
+								<dd> <a href="#">三级标题</a> <a href="#">三级标题</a> <a href="#">三级标题4</a> </dd>
+							</dl>
+						</div>
+
+					</div>
+				</li>
+
+
+				<li> <a herf="#">热销配件</a> <span></span>
+					<br><a href="#" class="f2">保护壳</a>
+					<a href="#" class="f2">移动电源</a>
+					<a href="#" class="f2">耳机</a>
+					<div class="p1">
+						<div class="subleft">
+							<dl>
+								<dt>二级标题555</dt>
+								<dd> <a href="#">三级标题</a> <a href="#">三级标题</a> <a href="#">三级标题</a> <a href="#">三级标题</a> <a href="#">三级标题</a>
+									<a href="#">三级标题</a> </dd>
+							</dl>
+							<dl>
+								<dt>二级标题</dt>
+								<dd> <a href="#">三级标题</a> <a href="#">三级标题</a> <a href="#">三级标题</a> <a href="#">三级标题</a> </dd>
+							</dl>
+							<dl>
+								<dt>二级标题</dt>
+								<dd> <a href="#">三级标题</a> <a href="#">三级标题</a> <a href="#">三级标题</a> <a href="#">三级标题</a> <a href="#">三级标题</a>
+								</dd>
+							</dl>
+							<dl>
+								<dt>二级标题</dt>
+								<dd> <a href="#">三级标题</a> <a href="#">三级标题</a> <a href="#">三级标题5</a> </dd>
+							</dl>
+						</div>
+					</div>
+				</li>
+
+
+				<li> <a herf="#">增值服务 & 其他</a> <span></span>
+					<br><a href="#" class="f2">服务器</a>
+					<a href="#" class="f2">增值卡</a>
+					<div class="p1">
+						<div class="subleft">
+							<dl>
+								<dt>二级标题666</dt>
+								<dd> <a href="#">三级标题</a> <a href="#">三级标题</a> <a href="#">三级标题</a> <a href="#">三级标题</a> <a href="#">三级标题</a>
+									<a href="#">三级标题</a> </dd>
+							</dl>
+							<dl>
+								<dt>二级标题</dt>
+								<dd> <a href="#">三级标题</a> <a href="#">三级标题</a> <a href="#">三级标题</a> <a href="#">三级标题</a> </dd>
+							</dl>
+							<dl>
+								<dt>二级标题</dt>
+								<dd> <a href="#">三级标题</a> <a href="#">三级标题</a> <a href="#">三级标题</a> <a href="#">三级标题</a> <a href="#">三级标题</a>
+								</dd>
+							</dl>
+							<dl>
+								<dt>二级标题</dt>
+								<dd> <a href="#">三级标题</a> <a href="#">三级标题</a> <a href="#">三级标题6</a> </dd>
+							</dl>
+						</div>
+					</div>
+				</li>
+
+
+
+
+			</ul>
+
+		</div>
+	</body>
+</html>
