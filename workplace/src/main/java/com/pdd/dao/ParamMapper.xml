@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.pdd.dao.ParamMapper" >
+  <resultMap id="BaseResultMap" type="com.pdd.entity.Param" >
+    <id column="param_id" property="paramId" jdbcType="INTEGER" />
+    <result column="param_communication_name" property="paramCommunicationName" jdbcType="VARCHAR" />
+    <result column="param_rear_camera" property="paramRearCamera" jdbcType="VARCHAR" />
+    <result column="param_front_camera" property="paramFrontCamera" jdbcType="VARCHAR" />
+    <result column="param_battery_capacity" property="paramBatteryCapacity" jdbcType="VARCHAR" />
+    <result column="param_market_time" property="paramMarketTime" jdbcType="VARCHAR" />
+    <result column="param_screen_size" property="paramScreenSize" jdbcType="VARCHAR" />
+    <result column="param_memory_running" property="paramMemoryRunning" jdbcType="VARCHAR" />
+    <result column="param_screen_color" property="paramScreenColor" jdbcType="VARCHAR" />
+    <result column="param_memory_body" property="paramMemoryBody" jdbcType="VARCHAR" />
+    <result column="param_resolution" property="paramResolution" jdbcType="VARCHAR" />
+    <result column="param_cpu_model" property="paramCpuModel" jdbcType="VARCHAR" />
+    <result column="param_cpu_core" property="paramCpuCore" jdbcType="VARCHAR" />
+    <result column="param_dual_card" property="paramDualCard" jdbcType="VARCHAR" />
+    <result column="param_goodsid" property="paramGoodsid" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    param_id, param_communication_name, param_rear_camera, param_front_camera, param_battery_capacity, 
+    param_market_time, param_screen_size, param_memory_running, param_screen_color, param_memory_body, 
+    param_resolution, param_cpu_model, param_cpu_core, param_dual_card, param_goodsid
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from param
+    where param_id = #{paramId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from param
+    where param_id = #{paramId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.pdd.entity.Param" >
+    insert into param (param_id, param_communication_name, 
+      param_rear_camera, param_front_camera, param_battery_capacity, 
+      param_market_time, param_screen_size, param_memory_running, 
+      param_screen_color, param_memory_body, param_resolution, 
+      param_cpu_model, param_cpu_core, param_dual_card, 
+      param_goodsid)
+    values (#{paramId,jdbcType=INTEGER}, #{paramCommunicationName,jdbcType=VARCHAR}, 
+      #{paramRearCamera,jdbcType=VARCHAR}, #{paramFrontCamera,jdbcType=VARCHAR}, #{paramBatteryCapacity,jdbcType=VARCHAR}, 
+      #{paramMarketTime,jdbcType=VARCHAR}, #{paramScreenSize,jdbcType=VARCHAR}, #{paramMemoryRunning,jdbcType=VARCHAR}, 
+      #{paramScreenColor,jdbcType=VARCHAR}, #{paramMemoryBody,jdbcType=VARCHAR}, #{paramResolution,jdbcType=VARCHAR}, 
+      #{paramCpuModel,jdbcType=VARCHAR}, #{paramCpuCore,jdbcType=VARCHAR}, #{paramDualCard,jdbcType=VARCHAR}, 
+      #{paramGoodsid,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.pdd.entity.Param" >
+    insert into param
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="paramId != null" >
+        param_id,
+      </if>
+      <if test="paramCommunicationName != null" >
+        param_communication_name,
+      </if>
+      <if test="paramRearCamera != null" >
+        param_rear_camera,
+      </if>
+      <if test="paramFrontCamera != null" >
+        param_front_camera,
+      </if>
+      <if test="paramBatteryCapacity != null" >
+        param_battery_capacity,
+      </if>
+      <if test="paramMarketTime != null" >
+        param_market_time,
+      </if>
+      <if test="paramScreenSize != null" >
+        param_screen_size,
+      </if>
+      <if test="paramMemoryRunning != null" >
+        param_memory_running,
+      </if>
+      <if test="paramScreenColor != null" >
+        param_screen_color,
+      </if>
+      <if test="paramMemoryBody != null" >
+        param_memory_body,
+      </if>
+      <if test="paramResolution != null" >
+        param_resolution,
+      </if>
+      <if test="paramCpuModel != null" >
+        param_cpu_model,
+      </if>
+      <if test="paramCpuCore != null" >
+        param_cpu_core,
+      </if>
+      <if test="paramDualCard != null" >
+        param_dual_card,
+      </if>
+      <if test="paramGoodsid != null" >
+        param_goodsid,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="paramId != null" >
+        #{paramId,jdbcType=INTEGER},
+      </if>
+      <if test="paramCommunicationName != null" >
+        #{paramCommunicationName,jdbcType=VARCHAR},
+      </if>
+      <if test="paramRearCamera != null" >
+        #{paramRearCamera,jdbcType=VARCHAR},
+      </if>
+      <if test="paramFrontCamera != null" >
+        #{paramFrontCamera,jdbcType=VARCHAR},
+      </if>
+      <if test="paramBatteryCapacity != null" >
+        #{paramBatteryCapacity,jdbcType=VARCHAR},
+      </if>
+      <if test="paramMarketTime != null" >
+        #{paramMarketTime,jdbcType=VARCHAR},
+      </if>
+      <if test="paramScreenSize != null" >
+        #{paramScreenSize,jdbcType=VARCHAR},
+      </if>
+      <if test="paramMemoryRunning != null" >
+        #{paramMemoryRunning,jdbcType=VARCHAR},
+      </if>
+      <if test="paramScreenColor != null" >
+        #{paramScreenColor,jdbcType=VARCHAR},
+      </if>
+      <if test="paramMemoryBody != null" >
+        #{paramMemoryBody,jdbcType=VARCHAR},
+      </if>
+      <if test="paramResolution != null" >
+        #{paramResolution,jdbcType=VARCHAR},
+      </if>
+      <if test="paramCpuModel != null" >
+        #{paramCpuModel,jdbcType=VARCHAR},
+      </if>
+      <if test="paramCpuCore != null" >
+        #{paramCpuCore,jdbcType=VARCHAR},
+      </if>
+      <if test="paramDualCard != null" >
+        #{paramDualCard,jdbcType=VARCHAR},
+      </if>
+      <if test="paramGoodsid != null" >
+        #{paramGoodsid,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.pdd.entity.Param" >
+    update param
+    <set >
+      <if test="paramCommunicationName != null" >
+        param_communication_name = #{paramCommunicationName,jdbcType=VARCHAR},
+      </if>
+      <if test="paramRearCamera != null" >
+        param_rear_camera = #{paramRearCamera,jdbcType=VARCHAR},
+      </if>
+      <if test="paramFrontCamera != null" >
+        param_front_camera = #{paramFrontCamera,jdbcType=VARCHAR},
+      </if>
+      <if test="paramBatteryCapacity != null" >
+        param_battery_capacity = #{paramBatteryCapacity,jdbcType=VARCHAR},
+      </if>
+      <if test="paramMarketTime != null" >
+        param_market_time = #{paramMarketTime,jdbcType=VARCHAR},
+      </if>
+      <if test="paramScreenSize != null" >
+        param_screen_size = #{paramScreenSize,jdbcType=VARCHAR},
+      </if>
+      <if test="paramMemoryRunning != null" >
+        param_memory_running = #{paramMemoryRunning,jdbcType=VARCHAR},
+      </if>
+      <if test="paramScreenColor != null" >
+        param_screen_color = #{paramScreenColor,jdbcType=VARCHAR},
+      </if>
+      <if test="paramMemoryBody != null" >
+        param_memory_body = #{paramMemoryBody,jdbcType=VARCHAR},
+      </if>
+      <if test="paramResolution != null" >
+        param_resolution = #{paramResolution,jdbcType=VARCHAR},
+      </if>
+      <if test="paramCpuModel != null" >
+        param_cpu_model = #{paramCpuModel,jdbcType=VARCHAR},
+      </if>
+      <if test="paramCpuCore != null" >
+        param_cpu_core = #{paramCpuCore,jdbcType=VARCHAR},
+      </if>
+      <if test="paramDualCard != null" >
+        param_dual_card = #{paramDualCard,jdbcType=VARCHAR},
+      </if>
+      <if test="paramGoodsid != null" >
+        param_goodsid = #{paramGoodsid,jdbcType=INTEGER},
+      </if>
+    </set>
+    where param_id = #{paramId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.pdd.entity.Param" >
+    update param
+    set param_communication_name = #{paramCommunicationName,jdbcType=VARCHAR},
+      param_rear_camera = #{paramRearCamera,jdbcType=VARCHAR},
+      param_front_camera = #{paramFrontCamera,jdbcType=VARCHAR},
+      param_battery_capacity = #{paramBatteryCapacity,jdbcType=VARCHAR},
+      param_market_time = #{paramMarketTime,jdbcType=VARCHAR},
+      param_screen_size = #{paramScreenSize,jdbcType=VARCHAR},
+      param_memory_running = #{paramMemoryRunning,jdbcType=VARCHAR},
+      param_screen_color = #{paramScreenColor,jdbcType=VARCHAR},
+      param_memory_body = #{paramMemoryBody,jdbcType=VARCHAR},
+      param_resolution = #{paramResolution,jdbcType=VARCHAR},
+      param_cpu_model = #{paramCpuModel,jdbcType=VARCHAR},
+      param_cpu_core = #{paramCpuCore,jdbcType=VARCHAR},
+      param_dual_card = #{paramDualCard,jdbcType=VARCHAR},
+      param_goodsid = #{paramGoodsid,jdbcType=INTEGER}
+    where param_id = #{paramId,jdbcType=INTEGER}
+  </update>
+</mapper>
