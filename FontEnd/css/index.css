@@ -1,0 +1,227 @@
+
+* {
+				margin: 0;
+				padding: 0;
+				text-decoration: none;
+			}
+
+			body {
+				margin: 0;
+				padding: 0;
+				text-decoration: none;
+				font-size: 10px;
+				/* background-color: cyan; */
+			}
+
+			li {
+				list-style: none;
+			}
+
+			.menu ul {
+				background-color: #f2f2f2;
+				width: 200px;
+				height: 440px;
+				
+				position: relative;
+				margin: 14px 0 14px 16px;
+					/* 盒模型 */
+					box-shadow: 2px 2px 6px #ddd;
+					border-radius: 10px;
+					color: #A6A6A6;
+					font-size: 16px;
+					font-weight: 400;
+					font-family: "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei", "Hiragino Sans GB", "Heiti SC", "WenQuanYi Micro Hei", sans-serif;
+				
+			}
+
+			.menu ul li {
+				border-radius: 10px;
+				width: 200px;
+				height: 73px;
+				/* padding: 10% 0 0;
+				margin: 0 10%; */
+				margin-left: 0px;
+				text-align: left;
+				line-height: 30px;
+				font-size: 13px;
+				z-index: 2;
+				background-color: #f2f2f2;
+				border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+				/* box-sizing: content-box; */
+			}
+
+			.menu ul li::after {
+				content: "";
+			}
+
+			.menu ul li .title {
+				font-size: 16px;
+				color: #848484;
+			}
+
+
+			/* 控制悬浮效果显示 */
+			.menu ul li:hover {
+				border: 0px solid #dd;
+				border-right: 0;
+				background-image: none;
+				background-color: white;
+			}
+		
+
+
+			/* 悬浮时显示超链接自定义样式 */
+			.menu ul li a:hover {
+				color: #D3454B;
+				cursor: pointer;
+			}
+
+			/* 悬浮时显示隐藏的详情块 */
+			.menu ul :hover div {
+				display: block;
+			}
+
+			/* 详情块的具体样式 */
+			.menu ul li div {
+				position: absolute;
+				left: 200px;
+				top: 0;
+				width: 680px;
+				height: 440px;
+				border: 0px solid #DDD;
+				background-color: #FFFEFE;
+				z-index: 3;
+				display: none;
+			}
+
+			.menu ul li .p1,
+			.p2,
+			.p3 {
+				background-color: #fff;
+			}
+
+			.menu ul li .p2 {
+
+				width: 254px;
+				height: 440px;
+
+			}
+
+			.menu ul li .p3 {
+
+				width: 1070px;
+				height: 440px;
+
+			}
+
+			.menu ul li .p4 {
+
+				width: 458px;
+				height: 440px;
+
+			}
+
+			.menu ul li .f2 {
+				font-size: 14px;
+				color: #A6A6A6;
+			}
+
+body {
+	color: red;
+	
+}
+
+
+
+.menu ul li div ul {
+	
+	background-color: #FFFEFE;
+	width: 204px;
+	height: 80px;
+	box-shadow: none;
+	float: left;
+}
+.menu ul li div ul li{
+	margin-top: 15px;
+	margin-left: 20px;
+	background-color: #FFFEFE;
+	width: 200px;
+	height: 80px;
+	/* margin-bottom: 24px; */
+	border-bottom: none;
+	
+}
+
+.menu ul li div ul li:hover {
+	border-radius: 10px;
+	background-color: #F6F6F6;
+	
+}
+.menu ul li div ul .li-all:hover{
+	background-color: #FFFEFE;
+}
+.menu ul li div ul li a {
+	width: 204px;
+	height: 80px;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+	margin-right: 0px;
+}
+
+.menu ul li div ul li a img {
+	width: 56px;
+	height: 56px;
+	margin: 12px 8px 0px 6px;
+	float: left;
+}
+
+.menu ul li div ul li a span {
+	float: left;
+	width: 120px;
+	height: 19px;
+	color: #777;
+	font-size: 13px;
+	margin-top: 25px;
+}
+.menu ul li div ul li .a-all{
+	width: 108px;
+	    height: 42px;
+	    line-height: 42px;
+		 margin-top: 18px;
+	    
+	    margin-left: 26px;
+		float: left;
+	    border: 1px solid #f2f2f2;
+	    border-radius: 0 12px 12px 0;
+	    font-size: 13px;
+	    color: #a7a7a7;
+	    display: block;
+	    position: relative;
+	    text-indent: 34px;
+}
+.menu ul li div ul li .a-all:after{
+	content: "";
+    width: 0;
+    height: 0;
+    display: block;
+    border-bottom: 5px solid transparent;
+    border-top: 5px solid transparent;
+    border-left: 5px solid #c0c0c0;
+    position: absolute;
+    top: 16px;
+    left: -1px;
+	}
+.menu ul li div ul li .a-all:before{
+	content: "";
+	    width: 42px;
+	    height: 42px;
+	    background: #fff;
+	    border: 1px solid #f2f2f2;
+	    display: block;
+	    border-radius: 22px;
+	    position: absolute;
+	    top: -1px;
+	    left: -22px;
+	}
