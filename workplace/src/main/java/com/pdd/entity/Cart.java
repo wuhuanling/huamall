@@ -1,6 +1,6 @@
 package com.pdd.entity;
 
-public class cart {
+public class Cart {
     private Integer cartId;
 
     private Integer cartUid;

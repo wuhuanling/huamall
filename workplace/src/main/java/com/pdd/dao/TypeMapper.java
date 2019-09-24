@@ -1,5 +1,9 @@
 package com.pdd.dao;
 
+import java.util.List;
+
+import org.apache.ibatis.annotations.Param;
+
 import com.pdd.entity.Type;
 
 public interface TypeMapper {
@@ -14,4 +18,6 @@ public interface TypeMapper {
     int updateByPrimaryKeySelective(Type record);
 
     int updateByPrimaryKey(Type record);
+    
+    public List<Type> selectChileByInfo(@Param("info") String info);
 }

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.pdd.dao.cartMapper" >
-  <resultMap id="BaseResultMap" type="com.pdd.entity.cart" >
+<mapper namespace="com.pdd.dao.CartMapper" >
+  <resultMap id="BaseResultMap" type="com.pdd.entity.Cart" >
     <id column="cart_id" property="cartId" jdbcType="INTEGER" />
     <result column="cart_uid" property="cartUid" jdbcType="INTEGER" />
     <result column="cart_goods_id" property="cartGoodsId" jdbcType="INTEGER" />
@@ -23,7 +23,7 @@
     delete from cart
     where cart_id = #{cartId,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.pdd.entity.cart" >
+  <insert id="insert" parameterType="com.pdd.entity.Cart" >
     insert into cart (cart_id, cart_uid, cart_goods_id, 
       cart_num, cart_status, cart_create_time, 
       cart_update_time)
@@ -31,7 +31,7 @@
       #{cartNum,jdbcType=INTEGER}, #{cartStatus,jdbcType=INTEGER}, #{cartCreateTime,jdbcType=INTEGER}, 
       #{cartUpdateTime,jdbcType=INTEGER})
   </insert>
-  <insert id="insertSelective" parameterType="com.pdd.entity.cart" >
+  <insert id="insertSelective" parameterType="com.pdd.entity.Cart" >
     insert into cart
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="cartId != null" >
@@ -80,7 +80,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.pdd.entity.cart" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.pdd.entity.Cart" >
     update cart
     <set >
       <if test="cartUid != null" >
@@ -104,7 +104,7 @@
     </set>
     where cart_id = #{cartId,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.pdd.entity.cart" >
+  <update id="updateByPrimaryKey" parameterType="com.pdd.entity.Cart" >
     update cart
     set cart_uid = #{cartUid,jdbcType=INTEGER},
       cart_goods_id = #{cartGoodsId,jdbcType=INTEGER},

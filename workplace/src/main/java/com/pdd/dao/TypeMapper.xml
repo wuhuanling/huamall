@@ -79,4 +79,8 @@
       type_parentsid = #{typeParentsid,jdbcType=INTEGER}
     where type_id = #{typeId,jdbcType=INTEGER}
   </update>
+  
+  <select id="selectChileByInfo" resultType="com.pdd.entity.Type" parameterType="java.lang.String">
+  SELECT * FROM type where type_parentsid=(SELECT type_id FROM type WHERE type_info=#{info})
+  </select>
 </mapper>
