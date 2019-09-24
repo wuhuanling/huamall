@@ -4,6 +4,6 @@ import com.pdd.entity.Users;
 
 public interface UsersBiz {
   Users checkLogin(String username ,String password);
-  void regedit(Users u);
+  int regedit(Users u);
   
 }

@@ -31,9 +31,9 @@ public void setUm(UsersMapper um) {
 
 
 	@Override
-	public void regedit(Users u) {
+	public int regedit(Users u) {
 		// TODO Auto-generated method stub
-		
+		return um.insertSelective(u);
 	}
 
 }

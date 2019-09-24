@@ -35,8 +35,14 @@ private	UsersBiz ub;
 		}else {
 			return null;
 		}
-		
+
+	}
+	@RequestMapping("/regedit")
+	public String regedit() {
+		return null;
 		
 		
 	}
+		
+	
 }
