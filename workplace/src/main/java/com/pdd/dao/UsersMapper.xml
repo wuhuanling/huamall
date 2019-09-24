@@ -21,12 +21,13 @@
     where user_id = #{userId,jdbcType=INTEGER}
   </select>
     <select id="selectByUnameAndPwd"  resultType="com.pdd.entity.Users" parameterType="java.lang.String">
-  select * from Users where username=#{user} and password=#{pwd}
+  select * from user where user_username=#{user} and user_password=#{pwd}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from user
     where user_id = #{userId,jdbcType=INTEGER}
   </delete>
+  
   <insert id="insert" parameterType="com.pdd.entity.Users" >
     insert into user (user_id, user_username, user_password, 
       user_nickname, user_phone, user_email

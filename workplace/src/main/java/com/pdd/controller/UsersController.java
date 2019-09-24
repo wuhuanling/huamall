@@ -9,7 +9,7 @@ import com.pdd.biz.UsersBiz;
 import com.pdd.entity.Users;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/")
 public class UsersController {
 
 	@Autowired
@@ -27,12 +27,18 @@ private	UsersBiz ub;
 
 
 	@RequestMapping("/login")
-	public  Users login(@RequestBody String username,String password ) {
+	public  Users login( String username,String password ) {
+		
+		username="aaa";
+		password="123";
 		Users u = ub.checkLogin(username, password);
+		System.out.println("方法");
 		if(u!=null) {
+			System.out.println(u.toString());
 			return u;
 			
 		}else {
+			
 			return null;
 		}
 

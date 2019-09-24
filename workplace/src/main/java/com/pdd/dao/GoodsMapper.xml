@@ -19,7 +19,7 @@
     from goods
     where goods_id = #{goodsId,jdbcType=INTEGER}
   </select>
-  <select id="selectAllGoods" resultSets="Goods">
+  <select id="selectAllGoods" resultType="com.pdd.entity.Goods">
   select * from goods
   </select>
   

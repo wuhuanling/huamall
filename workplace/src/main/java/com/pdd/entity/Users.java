@@ -13,7 +13,13 @@ public class Users {
 
     private String userEmail;
 
-    public Integer getUserId() {
+    @Override
+	public String toString() {
+		return "Users [userId=" + userId + ", userUsername=" + userUsername + ", userPassword=" + userPassword
+				+ ", userNickname=" + userNickname + ", userPhone=" + userPhone + ", userEmail=" + userEmail + "]";
+	}
+
+	public Integer getUserId() {
         return userId;
     }
 
