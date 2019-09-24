@@ -38,8 +38,13 @@ private	UsersBiz ub;
 
 	}
 	@RequestMapping("/regedit")
-	public String regedit() {
-		return null;
+	public String regedit(@RequestBody Users u) {
+		
+		int flag = ub.regedit(u);
+		if(flag>0) {
+			return "success";
+		}
+		return "error";
 		
 		
 	}
