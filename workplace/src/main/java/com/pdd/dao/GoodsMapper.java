@@ -1,5 +1,7 @@
 package com.pdd.dao;
 
+import java.util.List;
+
 import com.pdd.entity.Goods;
 
 public interface GoodsMapper {
@@ -14,4 +16,5 @@ public interface GoodsMapper {
     int updateByPrimaryKeySelective(Goods record);
 
     int updateByPrimaryKey(Goods record);
+    List<Goods> selectAllGoods();
 }

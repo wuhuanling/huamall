@@ -14,13 +14,13 @@
   </sql>
 
   
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap"  parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />
     from user
     where user_id = #{userId,jdbcType=INTEGER}
   </select>
-    <select id="selectByUnameAndPwd" resultMap="com.pdd.entity.Users" parameterType="java.lang.String">
+    <select id="selectByUnameAndPwd"  resultType="com.pdd.entity.Users" parameterType="java.lang.String">
   select * from Users where username=#{user} and password=#{pwd}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >

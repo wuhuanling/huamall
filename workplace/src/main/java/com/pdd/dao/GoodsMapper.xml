@@ -19,6 +19,10 @@
     from goods
     where goods_id = #{goodsId,jdbcType=INTEGER}
   </select>
+  <select id="selectAllGoods" resultSets="Goods">
+  select * from goods
+  </select>
+  
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from goods
     where goods_id = #{goodsId,jdbcType=INTEGER}

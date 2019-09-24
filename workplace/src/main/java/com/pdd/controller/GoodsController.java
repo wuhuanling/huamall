@@ -1,9 +1,13 @@
 package com.pdd.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.pdd.biz.GoodsBiz;
+import com.pdd.entity.Goods;
 
 @RestController
 public class GoodsController {
@@ -19,4 +23,9 @@ public class GoodsController {
 		this.gb = gb;
 	}
 	
+	@RequestMapping("/goodsList")
+	public List<Goods> getGoodsList(){
+	
+		return   gb.getAllGoods();
+	}
 }
