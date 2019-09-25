@@ -8,7 +8,7 @@
 		<version>2.1.8.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.pdd</groupId>
+	<groupId>com.huamall</groupId>
 	<artifactId>goubuy</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>goubuy</name>
@@ -33,7 +33,7 @@
   　　　　 <groupId>org.springframework.boot</groupId>
   　　　　 <artifactId>spring-boot-starter-log4j2</artifactId>
 　　　　</dependency>
- 
+
 		<dependency>
 			<groupId>org.mybatis.spring.boot</groupId>
 			<artifactId>mybatis-spring-boot-starter</artifactId>
