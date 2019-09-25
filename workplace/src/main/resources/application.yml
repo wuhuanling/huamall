@@ -1,9 +1,23 @@
 spring:
- datasource:
-  driver-class-name: com.mysql.jdbc.Driver
-  url: jdbc:mysql://localhost:3306/huamall?useUnicode=true&characterEncoding=UTF-8
-  username: root
-  password: root
+#  redis:
+#    database: 0
+#    host: localhost
+#    password: 
+#     
+#    port: 6379
+    
+#  session:
+#    store-type: redis 
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/huamall?useUnicode=true&characterEncoding=UTF-8
+    username: root
+    password: root
+ 
+ 
+  
+ 
+ 
  
 mybatis:
   config-location: classpath:mybatis-config.xml

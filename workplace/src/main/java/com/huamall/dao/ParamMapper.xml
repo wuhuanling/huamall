@@ -23,6 +23,7 @@
     param_market_time, param_screen_size, param_memory_running, param_screen_color, param_memory_body,
     param_resolution, param_cpu_model, param_cpu_core, param_dual_card, param_goodsid
   </sql>
+  
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select
     <include refid="Base_Column_List" />
