@@ -71,7 +71,7 @@
 
 
 			/* 悬浮时显示超链接自定义样式 */
-			.menu ul li a:hover {
+			.menu ul li a:hover { 
 				color: #D3454B;
 				cursor: pointer;
 			}
