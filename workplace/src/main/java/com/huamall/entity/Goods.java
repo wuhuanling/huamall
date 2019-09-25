@@ -14,6 +14,8 @@ public class Goods {
     private Integer goodsInstock;
 
     private Integer goodsStatus;
+    
+    private Integer goodsTypeid;
 
     public Integer getGoodsId() {
         return goodsId;
@@ -69,5 +71,13 @@ public class Goods {
 
     public void setGoodsStatus(Integer goodsStatus) {
         this.goodsStatus = goodsStatus;
+    }
+    
+    public Integer getGoodsTypeid() {
+        return goodsTypeid;
+    }
+
+    public void setGoodsTypeid(Integer goodsTypeid) {
+        this.goodsTypeid = goodsTypeid;
     }
 }
