@@ -1,5 +1,7 @@
 package com.huamall.entity;
 
+import java.util.Date;
+
 public class Cart {
     private Integer cartId;
 
@@ -11,9 +13,9 @@ public class Cart {
 
     private Integer cartStatus;
 
-    private Integer cartCreateTime;
+    private Date cartCreateTime;
 
-    private Integer cartUpdateTime;
+    private Date cartUpdateTime;
 
     public Integer getCartId() {
         return cartId;
@@ -55,19 +57,19 @@ public class Cart {
         this.cartStatus = cartStatus;
     }
 
-    public Integer getCartCreateTime() {
+    public Date getCartCreateTime() {
         return cartCreateTime;
     }
 
-    public void setCartCreateTime(Integer cartCreateTime) {
+    public void setCartCreateTime(Date cartCreateTime) {
         this.cartCreateTime = cartCreateTime;
     }
 
-    public Integer getCartUpdateTime() {
+    public Date getCartUpdateTime() {
         return cartUpdateTime;
     }
 
-    public void setCartUpdateTime(Integer cartUpdateTime) {
+    public void setCartUpdateTime(Date cartUpdateTime) {
         this.cartUpdateTime = cartUpdateTime;
     }
 }
