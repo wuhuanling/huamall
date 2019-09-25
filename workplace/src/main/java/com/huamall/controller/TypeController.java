@@ -4,6 +4,8 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -11,6 +13,7 @@ import com.huamall.biz.TypeBiz;
 import com.huamall.entity.Type;
 @CrossOrigin
 @RestController
+@RequestMapping("/type")
 public class TypeController {
 
 	@Autowired
@@ -24,9 +27,9 @@ public class TypeController {
 		this.tb = tb;
 	}
 
-	@RequestMapping("/selectchile")
-
-	public List<Type> selectChileByInfo(String info) {
-		return tb.selectChileByInfo("手机");
+	@GetMapping("/{info}")
+	public List<Type> selectChildByInfo(@PathVariable(value = "info") String info) {
+		System.out.println(info);
+		return tb.selectChildByInfo(info);
 	}
 }

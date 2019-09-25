@@ -7,5 +7,7 @@ import com.huamall.entity.Goods;
 public interface GoodsBiz {
 
 	List<Goods> getAllGoods();
+	
+	 public List<Goods> selectGoodsByTypeInfo(String info);
 
 }

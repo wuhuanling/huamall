@@ -1,6 +1,7 @@
 package com.huamall.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -8,8 +9,9 @@ import org.springframework.web.bind.annotation.RestController;
 import com.huamall.biz.UsersBiz;
 import com.huamall.entity.Users;
 
+@CrossOrigin
 @RestController
-@RequestMapping("/")
+@RequestMapping("/user")
 public class UsersController {
 
 	@Autowired
@@ -27,7 +29,7 @@ private	UsersBiz ub;
 
 
 	@RequestMapping("/login")
-	public  Users login( String username,String password ) {
+	public  Users login(String username,String password ) {
 
 		username="aaa";
 		password="123";

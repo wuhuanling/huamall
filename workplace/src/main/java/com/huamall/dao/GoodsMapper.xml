@@ -131,4 +131,8 @@
       goods_typeid = #{goodsTypeid,jdbcType=INTEGER}
     where goods_id = #{goodsId,jdbcType=INTEGER}
   </update>
+  <select id="selectGoodsByTypeInfo" parameterType="java.lang.String" resultType="com.huamall.entity.Goods">
+   SELECT *FROM goods where goods_typeid=(SELECT type_id FROM type WHERE type_info=#{info})
+  </select>
+  
 </mapper>

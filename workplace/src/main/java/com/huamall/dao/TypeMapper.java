@@ -19,5 +19,5 @@ public interface TypeMapper {
 
     int updateByPrimaryKey(Type record);
 
-    public List<Type> selectChileByInfo(@Param("info") String info);
+    public List<Type> selectChildByInfo(@Param("info") String info);
 }

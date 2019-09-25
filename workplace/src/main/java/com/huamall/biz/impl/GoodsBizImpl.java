@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.huamall.biz.GoodsBiz;
-import com.huamall.biz.OrderBiz;
+
 import com.huamall.dao.GoodsMapper;
 import com.huamall.entity.Goods;
 
@@ -30,4 +30,10 @@ public	List<Goods> getAllGoods(){
 
 	return goods;
 	}
+
+@Override
+public List<Goods> selectGoodsByTypeInfo(String info) {
+	// TODO Auto-generated method stub
+	return gm.selectGoodsByTypeInfo(info);
+}
 }

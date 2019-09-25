@@ -26,9 +26,9 @@ public class TypeBizImpl implements TypeBiz {
 
 
 	@Override
-	public List<Type> selectChileByInfo(String info) {
+	public List<Type> selectChildByInfo(String info) {
 		// TODO Auto-generated method stub
-		return tm.selectChileByInfo(info);
+		return tm.selectChildByInfo(info);
 	}
 
 }
