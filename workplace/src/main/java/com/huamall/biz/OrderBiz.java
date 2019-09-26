@@ -1,5 +1,9 @@
 package com.huamall.biz;
 
-public interface OrderBiz {
+import java.util.List;
 
+import com.huamall.entity.Order;
+
+public interface OrderBiz {
+	List<Order> getAllOrdersById(int userid);
 }
