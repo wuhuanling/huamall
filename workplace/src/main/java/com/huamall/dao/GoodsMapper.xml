@@ -10,10 +10,12 @@
     <result column="goods_instock" property="goodsInstock" jdbcType="INTEGER" />
     <result column="goods_status" property="goodsStatus" jdbcType="INTEGER" />
     <result column="goods_typeid" property="goodsTypeid" jdbcType="INTEGER" />
+	<result column="goods_color" property="goodsColor" jdbcType="VARCHAR" />
+    <result column="goods_standard" property="goodsStandard" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Base_Column_List" >
     goods_id, goods_title, goods_detail, goods_image, goods_price, goods_instock, goods_status, 
-    goods_typeid
+    goods_typeid, goods_color, goods_standard
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select
@@ -33,10 +35,12 @@
   <insert id="insert" parameterType="com.huamall.entity.Goods" >
     insert into goods (goods_id, goods_title, goods_detail, 
       goods_image, goods_price, goods_instock, 
-      goods_status, goods_typeid)
+      goods_status, goods_typeid, goods_color, 
+      goods_standard)
     values (#{goodsId,jdbcType=INTEGER}, #{goodsTitle,jdbcType=VARCHAR}, #{goodsDetail,jdbcType=VARCHAR}, 
       #{goodsImage,jdbcType=VARCHAR}, #{goodsPrice,jdbcType=INTEGER}, #{goodsInstock,jdbcType=INTEGER}, 
-      #{goodsStatus,jdbcType=INTEGER}, #{goodsTypeid,jdbcType=INTEGER})
+      #{goodsStatus,jdbcType=INTEGER}, #{goodsTypeid,jdbcType=INTEGER}, #{goodsColor,jdbcType=VARCHAR}, 
+      #{goodsStandard,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.huamall.entity.Goods" >
     insert into goods
@@ -65,6 +69,12 @@
       <if test="goodsTypeid != null" >
         goods_typeid,
       </if>
+	   <if test="goodsColor != null" >
+        goods_color,
+      </if>
+      <if test="goodsStandard != null" >
+        goods_standard,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="goodsId != null" >
@@ -91,6 +101,13 @@
       <if test="goodsTypeid != null" >
         #{goodsTypeid,jdbcType=INTEGER},
       </if>
+	  <if test="goodsColor != null" >
+        #{goodsColor,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsStandard != null" >
+        #{goodsStandard,jdbcType=VARCHAR},
+      </if>
+	  
     </trim>
   </insert>
   <update id="updateByPrimaryKeySelective" parameterType="com.huamall.entity.Goods" >
@@ -117,18 +134,26 @@
       <if test="goodsTypeid != null" >
         goods_typeid = #{goodsTypeid,jdbcType=INTEGER},
       </if>
+	  <if test="goodsColor != null" >
+        goods_color = #{goodsColor,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsStandard != null" >
+        goods_standard = #{goodsStandard,jdbcType=VARCHAR},
+      </if>
     </set>
     where goods_id = #{goodsId,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.huamall.entity.Goods" >
-    update goods
+   update goods
     set goods_title = #{goodsTitle,jdbcType=VARCHAR},
       goods_detail = #{goodsDetail,jdbcType=VARCHAR},
       goods_image = #{goodsImage,jdbcType=VARCHAR},
       goods_price = #{goodsPrice,jdbcType=INTEGER},
       goods_instock = #{goodsInstock,jdbcType=INTEGER},
       goods_status = #{goodsStatus,jdbcType=INTEGER},
-      goods_typeid = #{goodsTypeid,jdbcType=INTEGER}
+      goods_typeid = #{goodsTypeid,jdbcType=INTEGER},
+      goods_color = #{goodsColor,jdbcType=VARCHAR},
+      goods_standard = #{goodsStandard,jdbcType=VARCHAR}
     where goods_id = #{goodsId,jdbcType=INTEGER}
   </update>
   <select id="selectGoodsByTypeInfo" parameterType="java.lang.String" resultType="com.huamall.entity.Goods">

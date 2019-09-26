@@ -9,9 +9,11 @@
     <result column="cart_status" property="cartStatus" jdbcType="INTEGER" />
     <result column="cart_create_time" property="cartCreateTime" jdbcType="TIMESTAMP" />
     <result column="cart_update_time" property="cartUpdateTime" jdbcType="TIMESTAMP" />
+	<result column="cart_goods_title" property="cartGoodsTitle" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Base_Column_List" >
-    cart_id, cart_uid, cart_goods_id, cart_num, cart_status, cart_create_time, cart_update_time
+    cart_id, cart_uid, cart_goods_id, cart_num, cart_status, cart_create_time, cart_update_time, 
+    cart_goods_title
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
@@ -26,10 +28,10 @@
   <insert id="insert" parameterType="com.huamall.entity.Cart" >
     insert into cart (cart_id, cart_uid, cart_goods_id, 
       cart_num, cart_status, cart_create_time, 
-      cart_update_time)
+      cart_update_time, cart_goods_title)
     values (#{cartId,jdbcType=INTEGER}, #{cartUid,jdbcType=INTEGER}, #{cartGoodsId,jdbcType=INTEGER}, 
       #{cartNum,jdbcType=INTEGER}, #{cartStatus,jdbcType=INTEGER}, #{cartCreateTime,jdbcType=TIMESTAMP}, 
-      #{cartUpdateTime,jdbcType=TIMESTAMP})
+      #{cartUpdateTime,jdbcType=TIMESTAMP}, #{cartGoodsTitle,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.huamall.entity.Cart" >
     insert into cart
@@ -55,6 +57,9 @@
       <if test="cartUpdateTime != null" >
         cart_update_time,
       </if>
+	  <if test="cartGoodsTitle != null" >
+        cart_goods_title,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="cartId != null" >
@@ -77,6 +82,9 @@
       </if>
       <if test="cartUpdateTime != null" >
         #{cartUpdateTime,jdbcType=TIMESTAMP},
+      </if>
+	   <if test="cartGoodsTitle != null" >
+        #{cartGoodsTitle,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -101,6 +109,9 @@
       <if test="cartUpdateTime != null" >
         cart_update_time = #{cartUpdateTime,jdbcType=TIMESTAMP},
       </if>
+	  <if test="cartGoodsTitle != null" >
+        cart_goods_title = #{cartGoodsTitle,jdbcType=VARCHAR},
+      </if>
     </set>
     where cart_id = #{cartId,jdbcType=INTEGER}
   </update>
@@ -111,7 +122,8 @@
       cart_num = #{cartNum,jdbcType=INTEGER},
       cart_status = #{cartStatus,jdbcType=INTEGER},
       cart_create_time = #{cartCreateTime,jdbcType=TIMESTAMP},
-      cart_update_time = #{cartUpdateTime,jdbcType=TIMESTAMP}
+      cart_update_time = #{cartUpdateTime,jdbcType=TIMESTAMP},
+      cart_goods_title = #{cartGoodsTitle,jdbcType=VARCHAR}
     where cart_id = #{cartId,jdbcType=INTEGER}
   </update>
 </mapper>

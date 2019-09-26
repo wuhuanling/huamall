@@ -14,8 +14,12 @@ public class Goods {
     private Integer goodsInstock;
 
     private Integer goodsStatus;
-    
+
     private Integer goodsTypeid;
+
+    private String goodsColor;
+
+    private String goodsStandard;
 
     public Integer getGoodsId() {
         return goodsId;
@@ -72,12 +76,28 @@ public class Goods {
     public void setGoodsStatus(Integer goodsStatus) {
         this.goodsStatus = goodsStatus;
     }
-    
+
     public Integer getGoodsTypeid() {
         return goodsTypeid;
     }
 
     public void setGoodsTypeid(Integer goodsTypeid) {
         this.goodsTypeid = goodsTypeid;
+    }
+
+    public String getGoodsColor() {
+        return goodsColor;
+    }
+
+    public void setGoodsColor(String goodsColor) {
+        this.goodsColor = goodsColor == null ? null : goodsColor.trim();
+    }
+
+    public String getGoodsStandard() {
+        return goodsStandard;
+    }
+
+    public void setGoodsStandard(String goodsStandard) {
+        this.goodsStandard = goodsStandard == null ? null : goodsStandard.trim();
     }
 }
