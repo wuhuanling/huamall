@@ -9,4 +9,5 @@ import com.huamall.biz.CartBiz;
 @Transactional
 public class CartBizImpl implements CartBiz {
 
+	
 }
