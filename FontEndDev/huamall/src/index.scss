@@ -1,0 +1,42 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+a {
+    color: black
+}
+
+.TopNav  {
+    h3 {
+        text-align: center;
+        border: 2px solid green;
+    }
+
+    ul {
+        display: flex;
+        justify-content: center;
+        list-style-type: none;
+        li {
+            padding: 2% 2% 0 ;
+        }
+    }
+
+
+}
+
+.Main .topNav {
+    h3 {
+        text-align: center;
+    }
+
+    ul {
+        display: flex;
+        justify-content: center;
+        list-style-type: none;
+        li {
+            padding: 2% 1% 0 ;
+        }
+    }
+}

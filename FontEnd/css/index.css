@@ -21,7 +21,7 @@
 				background-color: #f2f2f2;
 				width: 200px;
 				height: 440px;
-				
+
 				position: relative;
 				margin: 14px 0 14px 16px;
 					/* 盒模型 */
@@ -31,7 +31,7 @@
 					font-size: 16px;
 					font-weight: 400;
 					font-family: "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei", "Hiragino Sans GB", "Heiti SC", "WenQuanYi Micro Hei", sans-serif;
-				
+
 			}
 
 			.menu ul li {
@@ -62,16 +62,16 @@
 
 			/* 控制悬浮效果显示 */
 			.menu ul li:hover {
-				border: 0px solid #dd;
+				border: 0px solid #dddddd;
 				border-right: 0;
 				background-image: none;
 				background-color: white;
 			}
-		
+
 
 
 			/* 悬浮时显示超链接自定义样式 */
-			.menu ul li a:hover { 
+			.menu ul li a:hover {
 				color: #D3454B;
 				cursor: pointer;
 			}
@@ -128,13 +128,13 @@
 
 body {
 	color: red;
-	
+
 }
 
 
 
 .menu ul li div ul {
-	
+
 	background-color: #FFFEFE;
 	width: 204px;
 	height: 80px;
@@ -149,13 +149,13 @@ body {
 	height: 80px;
 	/* margin-bottom: 24px; */
 	border-bottom: none;
-	
+
 }
 
 .menu ul li div ul li:hover {
 	border-radius: 10px;
 	background-color: #F6F6F6;
-	
+
 }
 .menu ul li div ul .li-all:hover{
 	background-color: #FFFEFE;
@@ -190,7 +190,7 @@ body {
 	    height: 42px;
 	    line-height: 42px;
 		 margin-top: 18px;
-	    
+
 	    margin-left: 26px;
 		float: left;
 	    border: 1px solid #f2f2f2;
