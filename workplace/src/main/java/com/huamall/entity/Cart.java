@@ -17,6 +17,8 @@ public class Cart {
 
     private Date cartUpdateTime;
 
+    private String cartGoodsTitle;
+
     public Integer getCartId() {
         return cartId;
     }
@@ -71,5 +73,13 @@ public class Cart {
 
     public void setCartUpdateTime(Date cartUpdateTime) {
         this.cartUpdateTime = cartUpdateTime;
+    }
+
+    public String getCartGoodsTitle() {
+        return cartGoodsTitle;
+    }
+
+    public void setCartGoodsTitle(String cartGoodsTitle) {
+        this.cartGoodsTitle = cartGoodsTitle == null ? null : cartGoodsTitle.trim();
     }
 }
