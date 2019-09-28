@@ -10,20 +10,21 @@ function Index(){
         <div>
             <div className="topNav">
                 <h3>登录子菜单索引</h3>
-                <ul>
-                    <li><Link to="/signin/Login">登录</Link></li>
-                    <li><Link to="/signin/QrcodeLogin">扫码登录</Link></li>
-                    <li><Link to="/signin/AuthorizeLogin">第三方授权登录</Link></li>
 
-                </ul>
             </div>
-            <div className="videoContent">
-                <h3>子菜单视图</h3>
+            <div className="signInContent">
+                <nav>&times;</nav>
+
+                <header>
+                    <Link to="/signin/Login">登录</Link>
+                    <Link to="/signin/QrcodeLogin">扫码登录</Link>
+                    <Link to="/signin/AuthorizeLogin">第三方授权登录</Link>
+                </header>
                 <Route path="/signin/Login/"            component={Login} />
                 <Route path="/signin/QrcodeLogin/"      component={QrcodeLogin} />
                 <Route path="/signin/AuthorizeLogin/"   component={AuthorizeLogin} />
-
             </div>
+
         </div>
     )
 }

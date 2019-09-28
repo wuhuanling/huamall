@@ -2,7 +2,13 @@
 const defaultState = {
     inputValue: '',
     list:[
-    ]
+    ],
+    // test: [
+    //     'https://res.vmallres.com/pimages//pages/picImages/zrHiAHQtxNSuv2rQ0Ea1.jpg',
+    //     'https://res.vmallres.com/pimages//pages/picImages/pGpGYxwvdYSjs5MoKAAB.jpg',
+    //     'https://res.vmallres.com/pimages//pages/picImages/zrHiAHQtxNSuv2rQ0Ea1.jpg',
+    //     'https://res.vmallres.com/pimages//pages/picImages/pGpGYxwvdYSjs5MoKAAB.jpg',
+    // ]
 }
 export default (state = defaultState,action)=>{  //就是一个方法函数
 

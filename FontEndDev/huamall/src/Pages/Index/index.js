@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import 'antd/dist/antd.css'
 import { Carousel,Menu, Dropdown, Button } from 'antd'
 import store from '../../store'
+import { whileStatement } from '@babel/types';
 
 const menu = (
     <Menu>
@@ -31,6 +32,17 @@ class index extends Component {
         this.storeChange = this.storeChange.bind(this)
         store.subscribe(this.storeChange)
 
+        this.state= {
+            test: [
+                'https://res.vmallres.com/pimages//pages/picImages/zrHiAHQtxNSuv2rQ0Ea1.jpg',
+                'https://res.vmallres.com/pimages//pages/picImages/pGpGYxwvdYSjs5MoKAAB.jpg',
+                'https://res.vmallres.com/pimages//pages/picImages/zrHiAHQtxNSuv2rQ0Ea1.jpg',
+                'https://res.vmallres.com/pimages//pages/picImages/pGpGYxwvdYSjs5MoKAAB.jpg',
+            ]
+        }
+
+
+
         //绑定this
 
     }
@@ -58,19 +70,27 @@ class index extends Component {
                     </Dropdown>
                 </aside>
                 <main>
-                <Carousel autoplay>
-                    <div>
-                    <h3>1</h3>
-                    </div>
-                    <div>
-                    <h3>2</h3>
-                    </div>
-                    <div>
-                    <h3>3</h3>
-                    </div>
-                    <div>
-                    <h3>4</h3>
-                    </div>
+                <Carousel autoplay dotPosition='right'>
+
+                    {this.state.test.map((item,index)=>{
+                        return (
+
+                            <img
+                            src={item}
+
+                            key={index} className={index + '00'}
+
+
+
+                            />
+
+
+
+
+                        )
+
+                    })
+                }
                 </Carousel>
                 </main>
             </div>
@@ -79,6 +99,7 @@ class index extends Component {
     //生命周期函数
     componentDidMount() {
         console.log("挂载完成")
+        console.log(this.state.test)
     }
     //最定义方法
     storeChange(){
