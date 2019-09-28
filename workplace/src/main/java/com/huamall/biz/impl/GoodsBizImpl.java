@@ -36,4 +36,52 @@ public List<Goods> selectGoodsByTypeInfo(String info) {
 	// TODO Auto-generated method stub
 	return gm.selectGoodsByTypeInfo(info);
 }
+
+@Override
+public Goods selectGoodsByTitle(String title) {
+	// TODO Auto-generated method stub
+	return gm.selectGoodsByTitle(title);
+}
+
+@Override
+public String selectColorByCode(String code) {
+	// TODO Auto-generated method stub
+	return gm.selectColorByCode(code);
+}
+
+@Override
+public String selectStandardByCode(String code) {
+	// TODO Auto-generated method stub
+	return gm.selectStandardByCode(code);
+}
+
+@Override
+public String selectParamByGoodstitle(String title) {
+	// TODO Auto-generated method stub
+	return gm.selectParamByGoodstitle(title);
+}
+
+@Override
+public String selectScreenByGoodstitle(String title) {
+	// TODO Auto-generated method stub
+	return gm.selectScreenByGoodstitle(title);
+}
+
+@Override
+public String selectStorageByGoodstitle(String title) {
+	// TODO Auto-generated method stub
+	return gm.selectStorageByGoodstitle(title);
+}
+
+@Override
+public String selectTransmissionByGoodstitle(String title) {
+	// TODO Auto-generated method stub
+	return gm.selectTransmissionByGoodstitle(title);
+}
+
+@Override
+public String selectShootingByGoodstitle(String title) {
+	// TODO Auto-generated method stub
+	return gm.selectShootingByGoodstitle(title);
+}
 }

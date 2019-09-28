@@ -1,23 +1,17 @@
 按类别名称查询所属类别商品（String类型参数，一个）
-http://localhost:8080//goods/参数
+http://localhost:8080/goods/参数
 @GetMapping("/{info}")
 public  List<Goods> selectGoodsByTypeInfo(@PathVariable(value = "info") String info){
-return gb.selectGoodsByTypeInfo(info);
-}
 
 直接查询所有商品（无参数）
-http://localhost:8080//goods/
+http://localhost:8080/goods/
 @GetMapping("/")
 public List<Goods> getGoodsList(){
-return   gb.getAllGoods();
-}
 
 按类别查询类别的下一级类别（String类型参数，一个）
-http://localhost:8080//type/参数
+http://localhost:8080/type/参数
 @GetMapping("/{info}")
 public List<Type> selectChildByInfo(@PathVariable(value = "info") String info) {
-return tb.selectChildByInfo(info);
-}
 
 登陆（String类型参数两个，账号，密码）
 http://localhost:8080/user/login
@@ -28,3 +22,45 @@ public  Users login( String username,String password )
 http://localhost:8080/user/regedit
 @RequestMapping("/regedit")
 public String regedit(@RequestBody Users u)
+
+按商品名称查询商品详情（String类型参数，一个）
+http://localhost:8080/goods/参数
+@GetMapping("/{title}")
+public Goods selectGoodsByTitle(@PathVariable(value = "title") String title) {
+
+按商品color属性分两位分割拿到的字符串当作参数去查询对应颜色（String类型参数，一个）
+@GetMapping("/{code}")
+public String selectColorByCode(@PathVariable(value = "code") String code ) {
+
+按商品standard属性分两位分割拿到的字符串当作参数去查询对应配置（String类型参数，一个）
+@GetMapping("/{code}")
+ public String selectStandardByCode(@PathVariable(value = "code") String code) {
+
+
+
+
+
+
+按商品名称查询商品参数表拿出数据（String类型参数，一个）
+@GetMapping("/{title}")
+public String selectParamByGoodstitle(@PathVariable(value = "title") String title) {
+
+
+按商品名称查询商品屏幕表拿出数据（String类型参数，一个）
+@GetMapping("/{title}")
+public String selectParamByGoodstitle(@PathVariable(value = "title") String title) {
+
+
+按商品名称查询商品拍摄功能表拿出数据（String类型参数，一个）
+@GetMapping("/{title}")
+public String selectParamByGoodstitle(@PathVariable(value = "title") String title) {
+
+按商品名称查询商品储存表拿出数据（String类型参数，一个）
+@GetMapping("/{title}")
+public String selectParamByGoodstitle(@PathVariable(value = "title") String title) {
+
+按商品名称查询商品传输功能表拿出数据（String类型参数，一个）
+@GetMapping("/{title}")
+public String selectParamByGoodstitle(@PathVariable(value = "title") String title) {
+
+

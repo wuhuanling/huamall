@@ -159,5 +159,35 @@
   <select id="selectGoodsByTypeInfo" parameterType="java.lang.String" resultType="com.huamall.entity.Goods">
    SELECT *FROM goods where goods_typeid=(SELECT type_id FROM type WHERE type_info=#{info})
   </select>
+  <select id="selectGoodsByTitle" resultType="com.huamall.entity.Goods" parameterType="java.lang.String">
+  SELECT * from goods where goods_title=#{title}
+  </select>
+  <select id="selectColorByCode" resultType="java.lang.String" parameterType="java.lang.String">
+  SELECT color_title FROM color where colcor_code=#{code}
+  </select>
+  <select id="selectStandardByCode" resultType="java.lang.String" parameterType="java.lang.String">
+   SELECT standard_title FROM standard where standard_code=#{code}
+  </select>
+  
+  
+  <select id="selectParamByGoodsInfo" resultType="com.huamall.entity.Param" parameterType="java.lang.String">
+  SELECT * FROM param where param_goodsid=(select goods_id FROM goods where goods_title=#{title})
+  </select>
+   <select id="selectScreenByGoodsInfo" resultType="com.huamall.entity.Screen" parameterType="java.lang.String">
+   SELECT * FROM Screen where Screen_goodsid=(select goods_id FROM goods where goods_title=#{title})
+  </select>
+   <select id="selectStorageByGoodsInfo" resultType="com.huamall.entity.Storage" parameterType="java.lang.String">
+   SELECT * FROM Storage where Storage_goodsid=(select goods_id FROM goods where goods_title=#{title})
+  </select>
+   <select id="selectTransmissionByGoodsInfo" resultType="com.huamall.entity.Transmission" parameterType="java.lang.String">
+   SELECT * FROM Transmission where Transmission_goodsid=(select goods_id FROM goods where goods_title=#{title})
+  </select>
+   <select id="selectShootingByGoodsInfo" resultType="com.huamall.entity.Shooting" parameterType="java.lang.String">
+   SELECT * FROM Shooting where Shooting_goodsid=(select goods_id FROM goods where goods_title=#{title})
+  </select>
+  
+  
+  
+  
   
 </mapper>

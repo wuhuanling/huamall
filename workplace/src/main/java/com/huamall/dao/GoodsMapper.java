@@ -22,4 +22,21 @@ public interface GoodsMapper {
     List<Goods> selectAllGoods();
     
     public List<Goods> selectGoodsByTypeInfo(@Param("info") String info);
+    
+    public Goods selectGoodsByTitle(@Param("info") String title );
+    
+    public String selectColorByCode(@Param("code") String code ); 
+    
+    public String selectStandardByCode(@Param("code") String code);
+    
+    
+    public String selectParamByGoodstitle(@Param("title") String title);
+    
+    public String selectScreenByGoodstitle(@Param("title") String title);
+    
+    public String selectStorageByGoodstitle(@Param("title") String title );
+    
+    public String selectTransmissionByGoodstitle(@Param("title") String title ); 
+    
+    public String selectShootingByGoodstitle(@Param("title") String title);
 }
