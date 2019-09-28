@@ -7,22 +7,24 @@ import AuthorizeLogin from './AuthorizeLogin'
 
 function Index(){
     return (
-        <div>
-            <div className="topNav">
+        <div className='signinPage'>
+            <div className="signinIndex">
                 <h3>登录子菜单索引</h3>
 
             </div>
-            <div className="signInContent">
+            <div className="signinContent">
                 <nav>&times;</nav>
-
                 <header>
                     <Link to="/signin/Login">登录</Link>
                     <Link to="/signin/QrcodeLogin">扫码登录</Link>
-                    <Link to="/signin/AuthorizeLogin">第三方授权登录</Link>
+                    <Link to="/signin/AuthorizeLogin">授权登录</Link>
                 </header>
-                <Route path="/signin/Login/"            component={Login} />
-                <Route path="/signin/QrcodeLogin/"      component={QrcodeLogin} />
-                <Route path="/signin/AuthorizeLogin/"   component={AuthorizeLogin} />
+                <main>
+                    <Route path="/signin/Login/"            component={Login} />
+                    <Route path="/signin/QrcodeLogin/"      component={QrcodeLogin} />
+                    <Route path="/signin/AuthorizeLogin/"   component={AuthorizeLogin} />
+                </main>
+
             </div>
 
         </div>
