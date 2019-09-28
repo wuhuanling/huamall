@@ -3,11 +3,9 @@
 	<head>
 		<meta charset="utf-8">
 		<title>华为菜单导航</title>
-
-		<script src="js/jquery-1.3.1.min.js"></script>
-
-
-		
+		<script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js">
+		</script>
+		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 		<link rel="stylesheet" href="css/index.css">
 	</head>
 	<body>
@@ -200,7 +198,7 @@
 
 				<li>
 					<a herf="#" class="title">
-						热销配件
+
 					</a>
 					<span>
 					</span>
@@ -208,12 +206,6 @@
 					<a href="#" class="f2">保护壳</a>
 					<a href="#" class="f2">移动电源</a>
 					<a href="#" class="f2">耳机</a>
-					<script type="text/javascript">
-						var a = document.getElementsByClass('f2');
-						var a = $.('.f2');
-						
-
-					</script>
 					<div class="p3">
 						<ul>
 							<li>
@@ -251,30 +243,12 @@
 					<a href="#" class="f2">增值卡</a>
 					<div class="p4">
 						<ul>
-							<li>
-								<a href="#">
-									<img src="#" />
-									<span>荣耀</span>
+							
+							<!-- <li class="li-all">
+								<a href="#" class="a-all">
+									查看全部
 								</a>
-							</li>
-							<li>
-								<a href="#">
-									<img src="#" />
-									<span>荣耀</span>
-								</a>
-							</li>
-							<li>
-								<a href="#">
-									<img src="#" />
-									<span>荣耀</span>
-								</a>
-							</li>
-							<li>
-								<a href="#">
-									<img src="#" />
-									<span>荣耀</span>
-								</a>
-							</li>
+							</li> -->
 						</ul>
 
 
@@ -288,5 +262,96 @@
 			</ul>
 
 		</div>
+		<!-- 菜单导航栏数据 -->
+
+
+
+	
+		<script>
+			
+			var model = $.ajax({
+				url: 'http://192.168.43.236:8080/type/%E6%99%BA%E8%83%BD%E7%A9%BF%E6%88%B4',
+				success: function() {
+				var	menu1 = JSON.parse(model.responseText);
+					// console.log(menu.typeInfo);
+
+					for (let item of menu1) {
+						// console.log(menu);
+						console.log(item.typeId);
+						console.log(item.typeInfo);
+						console.log(menu1);
+
+
+
+					}
+					
+					liMaker(menu1.length);
+					aMaker(menu1);
+
+
+
+				},
+			});
+
+			function liMaker(time) {
+				for (var i = 0; i < time; i++) {
+					var ment =`
+					<li>
+						<a href =""
+					class= "x" >
+						<img />
+						<span> </span> </a> 
+						</li>
+					`
+					$(".p4  ul").append(ment);
+						
+					
+					
+
+
+
+				}
+
+			}
+			function aMaker(menu){
+				for(var i=0;i< menu.length;i++){
+					$(".p4 ul li a img").eq(i).attr("src" ,menu[i].typeThumbail);
+					$(".p4 ul li a span").eq(i).text(menu[i].typeInfo);
+				}
+				
+			}
+			function 
+			
+			
+			
+			
+		</script>
+		
+		
+		
+		<!-- <script type = "text/javascript">
+		new Vue({
+		  el: '#app',
+		  data () {
+		    return {
+		      info: null
+		    }
+		  },
+		  mounted () {
+		  axios.get('http://192.168.43.236:8080/type/%E6%99%BA%E8%83%BD%E7%A9%BF%E6%88%B4', {
+		      params: {
+		        ID: 12345
+		      }
+		    })
+		    .then(function (response) {
+				this.info=response.data;
+		      console.log(info);
+		    })
+		    .catch(function (error) {
+		      console.log(error);
+		    });
+		  }
+		})
+		</script> -->
 	</body>
 </html>
