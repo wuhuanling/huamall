@@ -68,4 +68,9 @@
       colcor_code = #{colcorCode,jdbcType=VARCHAR}
     where color_id = #{colorId,jdbcType=INTEGER}
   </update>
+  
+  <select id="selectColorByCode" resultType="java.lang.String" parameterType="java.lang.String">
+  SELECT color_title FROM color where colcor_code=#{code}
+  </select>
+  
 </mapper>

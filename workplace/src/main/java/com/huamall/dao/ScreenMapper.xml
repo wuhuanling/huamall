@@ -126,4 +126,8 @@
       screen_goodsid = #{screenGoodsid,jdbcType=INTEGER}
     where screen_id = #{screenId,jdbcType=INTEGER}
   </update>
+  
+  <select id="selectScreenByGoodsInfo" resultType="com.huamall.entity.Screen" parameterType="java.lang.String">
+   SELECT * FROM screen where screen_goodsid=(select goods_id FROM goods where goods_title=#{title})
+  </select>
 </mapper>

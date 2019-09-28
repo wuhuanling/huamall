@@ -68,4 +68,9 @@
       standard_code = #{standardCode,jdbcType=VARCHAR}
     where standard_id = #{standardId,jdbcType=INTEGER}
   </update>
+  
+  
+  <select id="selectStandardByCode" resultType="java.lang.String" parameterType="java.lang.String">
+   SELECT standard_title FROM standard where standard_code=#{code}
+  </select>
 </mapper>

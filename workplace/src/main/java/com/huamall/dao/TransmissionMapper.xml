@@ -142,4 +142,8 @@
       transmission_goodsid = #{transmissionGoodsid,jdbcType=INTEGER}
     where transmission_id = #{transmissionId,jdbcType=INTEGER}
   </update>
+  
+  <select id="selectTransmissionByGoodsInfo" resultType="com.huamall.entity.Transmission" parameterType="java.lang.String">
+   SELECT * FROM transmission where transmission_goodsid=(select goods_id FROM goods where goods_title=#{title})
+  </select>
 </mapper>

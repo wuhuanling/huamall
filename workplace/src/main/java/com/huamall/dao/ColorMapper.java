@@ -1,5 +1,7 @@
 package com.huamall.dao;
 
+import org.apache.ibatis.annotations.Param;
+
 import com.huamall.entity.Color;
 
 public interface ColorMapper {
@@ -14,4 +16,6 @@ public interface ColorMapper {
     int updateByPrimaryKeySelective(Color record);
 
     int updateByPrimaryKey(Color record);
+    
+    public String selectColorByCode(@Param("code") String code ); 
 }

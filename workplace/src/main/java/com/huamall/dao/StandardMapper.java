@@ -1,5 +1,7 @@
 package com.huamall.dao;
 
+import org.apache.ibatis.annotations.Param;
+
 import com.huamall.entity.Standard;
 
 public interface StandardMapper {
@@ -14,4 +16,6 @@ public interface StandardMapper {
     int updateByPrimaryKeySelective(Standard record);
 
     int updateByPrimaryKey(Standard record);
+    
+    public String selectStandardByCode(@Param("code") String code);
 }

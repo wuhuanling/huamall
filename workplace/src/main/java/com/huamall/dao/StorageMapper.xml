@@ -92,4 +92,8 @@
       storage_goodsid = #{storageGoodsid,jdbcType=INTEGER}
     where storage_id = #{storageId,jdbcType=INTEGER}
   </update>
+  
+   <select id="selectStorageByGoodsInfo" resultType="com.huamall.entity.Storage" parameterType="java.lang.String">
+   SELECT * FROM storage where storage_goodsid=(select goods_id FROM goods where goods_title=#{title})
+  </select>
 </mapper>

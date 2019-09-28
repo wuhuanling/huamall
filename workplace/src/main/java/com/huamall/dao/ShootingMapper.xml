@@ -139,4 +139,8 @@
       shooting_goodsid = #{shootingGoodsid,jdbcType=INTEGER}
     where shooting_id = #{shootingId,jdbcType=INTEGER}
   </update>
+  
+  <select id="selectShootingByGoodsInfo" resultType="com.huamall.entity.Shooting" parameterType="java.lang.String">
+   SELECT * FROM shooting where shooting_goodsid=(select goods_id FROM goods where goods_title=#{title})
+  </select>
 </mapper>

@@ -1,5 +1,7 @@
 package com.huamall.dao;
 
+import org.apache.ibatis.annotations.Param;
+
 import com.huamall.entity.Shooting;
 
 public interface ShootingMapper {
@@ -14,4 +16,6 @@ public interface ShootingMapper {
     int updateByPrimaryKeySelective(Shooting record);
 
     int updateByPrimaryKey(Shooting record);
+    
+    public String selectShootingByGoodstitle(@Param("title") String title);
 }

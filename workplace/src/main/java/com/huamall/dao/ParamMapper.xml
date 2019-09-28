@@ -211,4 +211,8 @@
       param_goodsid = #{paramGoodsid,jdbcType=INTEGER}
     where param_id = #{paramId,jdbcType=INTEGER}
   </update>
+  
+  <select id="selectParamByGoodsInfo" resultType="com.huamall.entity.Param" parameterType="java.lang.String">
+  SELECT * FROM param where param_goodsid=(select goods_id FROM goods where goods_title=#{title})
+  </select>
 </mapper>

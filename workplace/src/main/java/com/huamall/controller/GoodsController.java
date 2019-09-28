@@ -48,48 +48,5 @@ public class GoodsController {
 		return gb.selectGoodsByTitle(title);
 	}
 	
-	@GetMapping("/{code}")
-	 public String selectColorByCode(@PathVariable(value = "code") String code ) {
-		 System.out.println();
-		 return gb.selectColorByCode(code);
-	 }
-	 
-	@GetMapping("/{code}")
-	 public String selectStandardByCode(@PathVariable(value = "code") String code) {
-		 System.out.println();
-		 return gb.selectStandardByCode(code);
-	 }
-	
-	
-	@GetMapping("/{title}")
-	 public String selectParamByGoodstitle(@PathVariable(value = "title") String title) {
-		 System.out.println();
-		 return gb.selectParamByGoodstitle(title);
-	 }
-	   
-	@GetMapping("/{title}")
-	 public String selectScreenByGoodstitle(@PathVariable(value = "title") String title) {
-		 System.out.println();
-		 return gb.selectScreenByGoodstitle(title);
-	 }
-	 
-	@GetMapping("/{title}")
-	 public String selectStorageByGoodstitle(@PathVariable(value = "title") String title ) {
-		 System.out.println();
-		 return gb.selectStorageByGoodstitle(title);
-	 }
-	 
-	@GetMapping("/{title}")
-	 public String selectTransmissionByGoodstitle(@PathVariable(value = "title") String title ) {
-		 System.out.println();
-		 return gb.selectTransmissionByGoodstitle(title);
-	 }
-	 
-	@GetMapping("/{title}")
-	 public String selectShootingByGoodstitle(@PathVariable(value = "title") String title) {
-		 System.out.println();
-		 return gb.selectShootingByGoodstitle(title);
-	 }
-	
-	
+
 }

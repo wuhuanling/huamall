@@ -1,5 +1,7 @@
 package com.huamall.dao;
 
+import org.apache.ibatis.annotations.Param;
+
 import com.huamall.entity.Transmission;
 
 public interface TransmissionMapper {
@@ -14,4 +16,6 @@ public interface TransmissionMapper {
     int updateByPrimaryKeySelective(Transmission record);
 
     int updateByPrimaryKey(Transmission record);
+    
+    public String selectTransmissionByGoodstitle(@Param("title") String title ); 
 }

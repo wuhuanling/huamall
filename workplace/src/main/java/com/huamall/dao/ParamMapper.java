@@ -14,4 +14,6 @@ public interface ParamMapper {
     int updateByPrimaryKeySelective(Param record);
 
     int updateByPrimaryKey(Param record);
+    
+    public String selectParamByGoodstitle(@org.apache.ibatis.annotations.Param("titile") String title);
 }
