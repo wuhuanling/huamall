@@ -19,7 +19,14 @@ public class Cart {
 
     private String cartGoodsTitle;
 
-    public Integer getCartId() {
+    @Override
+	public String toString() {
+		return "Cart [cartId=" + cartId + ", cartUid=" + cartUid + ", cartGoodsId=" + cartGoodsId + ", cartNum="
+				+ cartNum + ", cartStatus=" + cartStatus + ", cartCreateTime=" + cartCreateTime + ", cartUpdateTime="
+				+ cartUpdateTime + ", cartGoodsTitle=" + cartGoodsTitle + "]";
+	}
+
+	public Integer getCartId() {
         return cartId;
     }
 
