@@ -1,5 +1,7 @@
 package com.huamall.dao;
 
+import java.util.List;
+
 import com.huamall.entity.Cart;
 
 public interface CartMapper {
@@ -14,4 +16,5 @@ public interface CartMapper {
     int updateByPrimaryKeySelective(Cart record);
 
     int updateByPrimaryKey(Cart record);
+    List<Cart> selectCartsByuid(Integer userId);
 }

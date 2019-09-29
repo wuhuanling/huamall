@@ -15,6 +15,10 @@
     cart_id, cart_uid, cart_goods_id, cart_num, cart_status, cart_create_time, cart_update_time, 
     cart_goods_title
   </sql>
+<!--   List<Cart> selectCartsByuid(Integer userId); -->
+  <select id="selectCartsByuid"   resultType="com.huamall.entity.Cart" parameterType="java.lang.Integer">
+  select * from cart where cart_uid=#{userId}
+  </select>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />
