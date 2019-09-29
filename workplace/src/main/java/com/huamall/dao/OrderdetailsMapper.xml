@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.huamall.dao.OrderdetailsMapper" >
+  <resultMap id="BaseResultMap" type="com.huamall.entity.Orderdetails" >
+    <id column="orderdetails_id" property="orderdetailsId" jdbcType="INTEGER" />
+    <result column="orderdetails_orderid" property="orderdetailsOrderid" jdbcType="INTEGER" />
+    <result column="orderdetails_goodsid" property="orderdetailsGoodsid" jdbcType="INTEGER" />
+    <result column="orderdetails_goodsnum" property="orderdetailsGoodsnum" jdbcType="INTEGER" />
+    <result column="orderdetails_goodsprice" property="orderdetailsGoodsprice" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    orderdetails_id, orderdetails_orderid, orderdetails_goodsid, orderdetails_goodsnum, 
+    orderdetails_goodsprice
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from orderdetails
+    where orderdetails_id = #{orderdetailsId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from orderdetails
+    where orderdetails_id = #{orderdetailsId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.huamall.entity.Orderdetails" >
+    insert into orderdetails (orderdetails_id, orderdetails_orderid, 
+      orderdetails_goodsid, orderdetails_goodsnum, 
+      orderdetails_goodsprice)
+    values (#{orderdetailsId,jdbcType=INTEGER}, #{orderdetailsOrderid,jdbcType=INTEGER}, 
+      #{orderdetailsGoodsid,jdbcType=INTEGER}, #{orderdetailsGoodsnum,jdbcType=INTEGER}, 
+      #{orderdetailsGoodsprice,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.huamall.entity.Orderdetails" >
+    insert into orderdetails
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="orderdetailsId != null" >
+        orderdetails_id,
+      </if>
+      <if test="orderdetailsOrderid != null" >
+        orderdetails_orderid,
+      </if>
+      <if test="orderdetailsGoodsid != null" >
+        orderdetails_goodsid,
+      </if>
+      <if test="orderdetailsGoodsnum != null" >
+        orderdetails_goodsnum,
+      </if>
+      <if test="orderdetailsGoodsprice != null" >
+        orderdetails_goodsprice,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="orderdetailsId != null" >
+        #{orderdetailsId,jdbcType=INTEGER},
+      </if>
+      <if test="orderdetailsOrderid != null" >
+        #{orderdetailsOrderid,jdbcType=INTEGER},
+      </if>
+      <if test="orderdetailsGoodsid != null" >
+        #{orderdetailsGoodsid,jdbcType=INTEGER},
+      </if>
+      <if test="orderdetailsGoodsnum != null" >
+        #{orderdetailsGoodsnum,jdbcType=INTEGER},
+      </if>
+      <if test="orderdetailsGoodsprice != null" >
+        #{orderdetailsGoodsprice,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.huamall.entity.Orderdetails" >
+    update orderdetails
+    <set >
+      <if test="orderdetailsOrderid != null" >
+        orderdetails_orderid = #{orderdetailsOrderid,jdbcType=INTEGER},
+      </if>
+      <if test="orderdetailsGoodsid != null" >
+        orderdetails_goodsid = #{orderdetailsGoodsid,jdbcType=INTEGER},
+      </if>
+      <if test="orderdetailsGoodsnum != null" >
+        orderdetails_goodsnum = #{orderdetailsGoodsnum,jdbcType=INTEGER},
+      </if>
+      <if test="orderdetailsGoodsprice != null" >
+        orderdetails_goodsprice = #{orderdetailsGoodsprice,jdbcType=INTEGER},
+      </if>
+    </set>
+    where orderdetails_id = #{orderdetailsId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.huamall.entity.Orderdetails" >
+    update orderdetails
+    set orderdetails_orderid = #{orderdetailsOrderid,jdbcType=INTEGER},
+      orderdetails_goodsid = #{orderdetailsGoodsid,jdbcType=INTEGER},
+      orderdetails_goodsnum = #{orderdetailsGoodsnum,jdbcType=INTEGER},
+      orderdetails_goodsprice = #{orderdetailsGoodsprice,jdbcType=INTEGER}
+    where orderdetails_id = #{orderdetailsId,jdbcType=INTEGER}
+  </update>
+</mapper>
