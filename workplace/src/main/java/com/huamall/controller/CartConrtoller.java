@@ -30,7 +30,7 @@ public class CartConrtoller {
 	private CartBiz cb;
 
 @RequestMapping(value = "/cart" )
-	public  String addToCart(@RequestBody(required = false) Cart cart,HttpServletRequest request,HttpServletResponse response) throws UnsupportedEncodingException {
+	public  String addToCart(@RequestBody(required = false) Cart cart,HttpServletRequest request,HttpServletResponse response)  {
 		//前端将想加入购物车的商品信息穿过来
 		System.out.println(cart);
 		cart.setCartCreateTime(new Date());
