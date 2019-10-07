@@ -84,7 +84,9 @@ public class CartConrtoller {
 						if(isContain(cartList, cart)) {
 							//执行更新操作
 							System.out.println("更新");
-							cart.setCartNum(cart.getCartNum());
+							Cart c = getCartId(cartList, cart);
+							cart.setCartId(c.getCartId());
+							cart.setCartNum(c.getCartNum()+cart.getCartNum());
 							System.out.println(cart);
 							cb.updateCart(cart );
 						}else {
@@ -117,6 +119,19 @@ private boolean isContain(List<Cart> cartList, Cart cart) {
 	}
 	
 	return false;
+}
+
+private Cart getCartId(List<Cart> cartList, Cart cart) {
+	// TODO Auto-generated method stub
+	for (Cart c : cartList) {
+		if(c!=null) {
+		if(c.getCartGoodsTitle().equals(cart.getCartGoodsTitle())) {
+		return c	;
+		}
+		}
+	}
+	
+	return null;
 }
 
 public CartBiz getCb() {
