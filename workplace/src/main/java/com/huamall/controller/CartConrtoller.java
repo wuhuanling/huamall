@@ -35,11 +35,11 @@ public class CartConrtoller {
 		System.out.println(cart);
 		cart.setCartCreateTime(new Date());
 		cart.setCartUpdateTime(new Date());
-		
+		List<Cart> cartList=new ArrayList<Cart>();
 		
 		if(cart.getCartUid()==null) {
 			System.out.println("未登录");
-			List<Cart> cartList=new ArrayList<Cart>();
+		
 			
 			String cartListCookie = CookieUtil.getCookieValue(request, "cartListCookie",true);
 			
@@ -71,7 +71,30 @@ public class CartConrtoller {
 				CookieUtil.setCookie(request, response, "cartListCookie", JSON.toJSONString(cartList), 60*60*72 ,true);
 				}else {
 //					登陆了
-					
+				
+					cartList = cb.getAllCart(cart.getCartUid());
+					if(cartList==null) {
+						//db购物车为空
+						System.out.println("空");
+						cb.addCart(cart);
+					}else {
+						//db购物车不空
+						System.out.println("不空");
+						//判断是否重复添加
+						if(isContain(cartList, cart)) {
+							//执行更新操作
+							System.out.println("更新");
+							cart.setCartNum(cart.getCartNum());
+							System.out.println(cart);
+							cb.updateCart(cart );
+						}else {
+							//添加操作
+							cb.addCart(cart);
+						}
+						//同步缓存
+						cb.flushCartCache(cart.getCartUid());
+						
+					}
 					
 				}
 
@@ -94,6 +117,14 @@ private boolean isContain(List<Cart> cartList, Cart cart) {
 	}
 	
 	return false;
+}
+
+public CartBiz getCb() {
+	return cb;
+}
+
+public void setCb(CartBiz cb) {
+	this.cb = cb;
 }
 	
 

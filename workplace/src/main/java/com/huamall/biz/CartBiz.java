@@ -8,4 +8,10 @@ public interface CartBiz {
 
 	List<Cart> getAllCart(Integer userId);
 
+	void addCart(Cart cart);
+
+	void updateCart(Cart cart);
+
+	void flushCartCache(Integer cartUid);
+
 }
